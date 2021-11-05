@@ -2,7 +2,7 @@
 const express = require("express");
 // Instancia uma referência do express no projeto
 const app = express();
-const port = 3000; // Const para armanezar a porta do servidor
+const port = process.env.PORT || 3000; // Const para armanezar a porta do servidor
 
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
@@ -18,7 +18,7 @@ let message = "";
 // res de resposta
 // Substituição de function por arrow function
 app.get("/", (req, res) => {
-    const lista1 = ["Backend", "Frontend", "Fullstack"];
+    const lista1 = [{titulo: "Backend", carga: 50}, {titulo: "Frontend", carga: 50}, {titulo: "Fullstack", carga: 50}];
     // const pokedex = [{numero: 25, nome: "Gabriel"},{numero:},{}];
     const analyticsList = ["Engenharia de dados", "Ciência de dados"];
     // Renderizo o arquivo "index.ejs", o EJS já busca dentro da pasta views.
@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
     }, 1000);
 
     res.render("index", {
-      nome: "Juliane", 
+      nome: "João Pedro", 
       devList: lista1, 
       analyticsList: analyticsList,
       message
