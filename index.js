@@ -49,3 +49,5 @@ app.post("/subscription", (req, res) => {
 // Liga o servidor na porta especificada em port
 // Adicionando a const port e uma arow function de callback para mostrar no console que o servidor está rodando.
 app.listen(port, () => console.log(`Projeto funcionando: http://localhost:${port}`));
+
+//novo comentario
